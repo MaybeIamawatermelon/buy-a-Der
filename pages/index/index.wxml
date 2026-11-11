@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<navigation-bar title="买个der" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="wrap">
+
+    <view class="hero">
+      <view class="hero-emoji">🛒</view>
+      <view class="hero-title">买个der</view>
+      <view class="hero-sub">先说出你的梦想，我们再帮你省钱</view>
+    </view>
+
+    <view class="card">
+      <view class="field">
+        <view class="label">你要买的东西</view>
+        <input
+          class="input"
+          type="text"
+          value="{{item}}"
+          placeholder="比如：最新款手机"
+          placeholder-class="ph"
+          maxlength="60"
+          bindinput="onItemInput"
+        />
+      </view>
+
+      <view class="field">
+        <view class="label">为什么要买 · 条件是否允许</view>
+        <textarea
+          class="textarea"
+          value="{{reason}}"
+          placeholder="比如：旧的还能用，但新款拍照好看，而且我有存款…"
+          placeholder-class="ph"
+          maxlength="200"
+          auto-height
+          bindinput="onReasonInput"
+        />
+      </view>
+
+      <button class="btn" hover-class="btn-hover" bindtap="onSubmit">得出结论</button>
+    </view>
+
+    <view class="result {{showResult ? 'result-show' : ''}}">
+      <view class="result-text">{{result}}</view>
+      <view class="result-quip" wx:if="{{quip}}">{{quip}}</view>
+      <view class="result-reset" wx:if="{{showResult}}" bindtap="onReset">不服？再说一次</view>
+    </view>
+
+    <view class="footer">本小程序不提供购物建议，只提供清醒</view>
+  </view>
+</scroll-view>
