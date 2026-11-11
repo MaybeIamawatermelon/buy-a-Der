@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <navigation-bar title="买个der" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 
-<scroll-view class="page-scroll" scroll-y type="list">
+<scroll-view class="page-scroll" scroll-y enable-flex>
   <view class="wrap">
 
     <view class="hero">
